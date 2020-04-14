@@ -6,10 +6,10 @@ using HtmlAgilityPack;
 
 namespace CovidMonitor
 {
-    class AzureBrowserClass
+    class Monitor
     {
         
-        public static void ExtractCount()
+        public static void Process()
         {
 
             string url = "https://www.ncdhhs.gov/covid-19-case-count-nc";            
@@ -42,7 +42,7 @@ namespace CovidMonitor
 						{
                             //calling the phone message function
                             Console.Write("\nThe count of covid - 19 Confirmed Case in NC is  "+value);                            
-							AzurePhoneClass phone = new AzurePhoneClass();
+							PhoneUtility phone = new PhoneUtility();
 							phone.countoftoday = value;
 							phone.SendMessage();
                             Console.WriteLine("\nMessage sent to phone");

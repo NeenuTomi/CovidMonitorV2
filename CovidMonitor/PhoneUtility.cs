@@ -5,7 +5,7 @@ using Twilio.Rest.Api.V2010.Account;
 
 namespace CovidMonitor
 {
-    class AzurePhoneClass
+    class PhoneUtility
 
     {		
 		public string countoftoday { get; set; }		

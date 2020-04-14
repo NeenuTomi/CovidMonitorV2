@@ -4,14 +4,14 @@ using System;
 
 namespace CovidMonitor
 {
-    public static class Function1
+    public static class MonitorFunction
     {
-        [FunctionName("FunctionNew")]
+        [FunctionName("Monitor")]
         // azure function runs everday at 6.30 am
         public static void Run([TimerTrigger("0 30 6 * * *")]TimerInfo myTimer, ILogger log)
         {
             // calling function to get the count from website
-            AzureBrowserClass.ExtractCount();
+            Monitor.Process();
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
