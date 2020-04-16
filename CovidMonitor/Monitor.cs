@@ -12,7 +12,7 @@ namespace CovidMonitor
         public static void Process()
         {
 
-            string url = "https://www.ncdhhs.gov/covid-19-case-count-nc";
+            const string url = "https://www.ncdhhs.gov/covid-19-case-count-nc";
             try
             {
                 HttpClient hc = new HttpClient();
