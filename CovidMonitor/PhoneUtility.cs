@@ -6,24 +6,23 @@ using Twilio.Rest.Api.V2010.Account;
 namespace CovidMonitor
 {
     class PhoneUtility
-
     {		
-		public string countoftoday { get; set; }		
+		public string countOfToday { get; set; }		
 		const string accountSid = "AXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX8";
 		const string authToken = "3XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXb";
 		public void SendMessage()
 		{
 			try
 			{
-				string messagebody = "The count of covid-19 Confirmed Case in NC:"+countoftoday;
+				string messageBody = "The count of covid-19 Confirmed Case in NC:"+countOfToday;
 				TwilioClient.Init(accountSid, authToken);
 				var to = new PhoneNumber("+1832xxx1782");
 				var from = new PhoneNumber("+17344283320");
-				var message = MessageResource.Create(to, from: from, body: messagebody);
+				var message = MessageResource.Create(to, from: from, body: messageBody);
 			}
-			catch(Exception e)
+			catch(Exception ex)
 			{
-				Console.WriteLine("exception happen in message sending");
+				Console.WriteLine($"Exception in message sending - {ex.Message}");
 			}
 		}
 	}
